@@ -6,60 +6,66 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+NOTIFICATIONS_INTERFACE = "org.freedesktop.Notifications"
+SCREENSAVER_INTERFACE = "org.freedesktop.ScreenSaver"
+GNOME_SCREENSAVER_INTERFACE = "org.gnome.ScreenSaver"
+LOGIN_MANAGER_INTERFACE = "org.freedesktop.login1.Manager"
+
 SIGNALS = {
     "session.notification_on_action_invoked": {
         "name": "on_action_invoked",
-        "interface": "org.freedesktop.Notifications",
+        "interface": NOTIFICATIONS_INTERFACE,
     },
     "session.notification_on_notification_closed": {
         "name": "on_notification_closed",
-        "interface": "org.freedesktop.Notifications",
+        "interface": NOTIFICATIONS_INTERFACE,
     },
     "session.screensaver_on_active_changed": {
         "name": "on_active_changed",
-        "interface": "org.freedesktop.ScreenSaver",
+        "interface": SCREENSAVER_INTERFACE,
     },
     "session.gnome_screensaver_on_active_changed": {
         "name": "on_active_changed",
-        "interface": "org.gnome.ScreenSaver",
+        "interface": GNOME_SCREENSAVER_INTERFACE,
     },
     "system.login_on_prepare_for_sleep": {
         "name": "on_prepare_for_sleep",
-        "interface": "org.freedesktop.login1.Manager",
+        "interface": LOGIN_MANAGER_INTERFACE,
     },
     "system.login_on_prepare_for_shutdown": {
         "name": "on_prepare_for_shutdown",
-        "interface": "org.freedesktop.login1.Manager",
+        "interface": LOGIN_MANAGER_INTERFACE,
     },
     "subscribed": [],
 }
 
 INTERFACES = {
-    "org.freedesktop.login1.Manager": {
+    LOGIN_MANAGER_INTERFACE: {
         "type": "system",
-        "service": "org.freedesktop.login1",
-        "path": "/org/freedesktop/login1",
-        "interface": "org.freedesktop.login1.Manager",
+        "service": LOGIN_MANAGER_INTERFACE,
+        "path": f"/{LOGIN_MANAGER_INTERFACE}",
+        "interface": LOGIN_MANAGER_INTERFACE,
     },
-    "org.freedesktop.ScreenSaver": {
+    SCREENSAVER_INTERFACE: {
         "type": "session",
-        "service": "org.freedesktop.ScreenSaver",
-        "path": "/org/freedesktop/ScreenSaver",
-        "interface": "org.freedesktop.ScreenSaver",
+        "service": SCREENSAVER_INTERFACE,
+        "path": f"/{SCREENSAVER_INTERFACE}",
+        "interface": SCREENSAVER_INTERFACE,
     },
-    "org.gnome.ScreenSaver": {
+    GNOME_SCREENSAVER_INTERFACE: {
         "type": "session",
-        "service": "org.gnome.ScreenSaver",
-        "path": "/org/gnome/ScreenSaver",
-        "interface": "org.gnome.ScreenSaver",
+        "service": GNOME_SCREENSAVER_INTERFACE,
+        "path": f"/{GNOME_SCREENSAVER_INTERFACE}",
+        "interface": GNOME_SCREENSAVER_INTERFACE,
     },
-    "org.freedesktop.Notifications": {
+    NOTIFICATIONS_INTERFACE: {
         "type": "session",
-        "service": "org.freedesktop.Notifications",
-        "path": "/org/freedesktop/Notifications",
-        "interface": "org.freedesktop.Notifications",
+        "service": NOTIFICATIONS_INTERFACE,
+        "path": f"/{NOTIFICATIONS_INTERFACE}",
+        "interface": NOTIFICATIONS_INTERFACE,
     },
 }
+
 
 
 async def get_interface(bus, service, path, interface) -> Optional[ProxyInterface]:
