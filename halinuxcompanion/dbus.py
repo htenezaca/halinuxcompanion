@@ -11,6 +11,7 @@ SCREENSAVER_INTERFACE = "org.freedesktop.ScreenSaver"
 GNOME_SCREENSAVER_INTERFACE = "org.gnome.ScreenSaver"
 LOGIN_MANAGER_INTERFACE = "org.freedesktop.login1.Manager"
 
+
 SIGNALS = {
     "session.notification_on_action_invoked": {
         "name": "on_action_invoked",
