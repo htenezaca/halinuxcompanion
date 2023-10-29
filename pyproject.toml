@@ -7,8 +7,8 @@ name = "halinux"
 version = "0.1.0"
 description = "Proyecto Halinux"
 authors = [
-  "Javier Lopez<je.lopez816@uniandes.edu.co>"
-  "Hector Tenezaca<h.tenezaca@uniandes.edu.co>",
+  "Javier Lopez<je.lopez816@uniandes.edu.co>",
+  "Hector Tenezaca<h.tenezaca@uniandes.edu.co>"
 ]
 
 [tool.poetry.dependencies]
