@@ -4,5 +4,4 @@ config/
 my-config.json
 config.json
 ha_config/
-Tox.ini
 ```
