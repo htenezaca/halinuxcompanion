@@ -83,7 +83,6 @@ class Sensor:
             "unique_id": self.unique_id,
         }
 
-
 class SensorManager:
     """Manages sensors registration, and updates to Home Assistant"""
     api: API
