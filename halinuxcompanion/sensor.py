@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 SC_REGISTER_SENSOR = 301
 
-
 class Sensor:
     """Standard sensor class"""
     instances = []
