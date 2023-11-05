@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 SC_REGISTER_SENSOR = 301
 
-
 class Sensor:
     """Standard sensor class"""
     instances = []
@@ -83,7 +82,6 @@ class Sensor:
             "type": self.type,
             "unique_id": self.unique_id,
         }
-
 
 class SensorManager:
     """Manages sensors registration, and updates to Home Assistant"""
